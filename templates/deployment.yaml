@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "vynd-{{.Release.Name }}"
+  labels:
+    app: "vynd-{{.Release.Name }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: "vynd-{{.Release.Name }}"
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        app: "vynd-{{.Release.Name }}"
+    spec:
+      containers:
+        - name: "vynd-{{.Release.Name }}"
+          image: "{{ .Values.image.repository }}/vynd-{{.Release.Name }}"
+          imagePullPolicy: Always
+          ports:
+            - name: {{.Release.Name }}
+              containerPort: {{.Values.containerPort}}
+              protocol: TCP

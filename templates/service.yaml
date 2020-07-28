@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "vynd-{{.Release.Name }}"
+  labels:
+    app: "vynd-{{.Release.Name }}"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{.Release.Name }}
+      protocol: TCP
+      name: http
+  selector:
+    app: "vynd-{{.Release.Name }}"
