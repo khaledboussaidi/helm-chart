@@ -3,12 +3,12 @@ entries:
   hello-world:
   - apiVersion: v2
     appVersion: latest
-    created: "2020-07-28T16:52:17.049048571+01:00"
+    created: "2020-08-08T01:16:23.214349416+01:00"
     description: A Helm chart for Kubernetes
-    digest: c4af1bd8224b1e544cf39d208b9e530d051ba711e40a889b5a957ecd6b611e80
+    digest: 9b9a333f758f1a44f0cff630d045ca81f31810d6ddc87ff31199a0b5d744e104
     name: hello-world
     type: application
     urls:
     - hello-world-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-28T16:52:17.04768302+01:00"
+generated: "2020-08-08T01:16:22.959275278+01:00"

@@ -23,6 +23,5 @@ spec:
           image: "{{ .Values.image.repository }}/vynd-{{.Release.Name }}"
           imagePullPolicy: Always
           ports:
-            - name: {{.Release.Name }}
-              containerPort: {{.Values.containerPort}}
+            - containerPort: {{.Values.containerPort}}
               protocol: TCP
